@@ -26,7 +26,7 @@ public class TaskList {
     @OneToMany(mappedBy = "taskList", cascade = { //Represents one task list to many tasks.
             CascadeType.REMOVE, CascadeType.PERSIST //When a taskList is deleted all tasks it contains will be deleted.
     })                                              // When a taskList is saved all tasks it contains will be saved.
-    private List<Task> tasks;
+    private static List<Task> tasks;
 
     @Column(name = "created", nullable = false)
     private LocalDateTime created;
@@ -70,7 +70,7 @@ public class TaskList {
         this.description = description;
     }
 
-    public List<Task> getTasks() {
+    public static List<Task> getTasks() {
         return tasks;
     }
 
