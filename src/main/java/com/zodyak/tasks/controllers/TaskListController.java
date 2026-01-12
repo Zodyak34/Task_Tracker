@@ -1,7 +1,6 @@
 package com.zodyak.tasks.controllers;
 
 import com.zodyak.tasks.domain.dto.TaskListDto;
-import com.zodyak.tasks.domain.entities.TaskList;
 import com.zodyak.tasks.mappers.TaskListMapper;
 import com.zodyak.tasks.services.TaskListService;
 import org.springframework.web.bind.annotation.GetMapping;
