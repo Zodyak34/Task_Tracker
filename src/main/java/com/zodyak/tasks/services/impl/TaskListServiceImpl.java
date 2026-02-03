@@ -3,6 +3,7 @@ package com.zodyak.tasks.services.impl;
 import com.zodyak.tasks.domain.entities.TaskList;
 import com.zodyak.tasks.repositories.TaskListRepository;
 import com.zodyak.tasks.services.TaskListService;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -49,6 +50,7 @@ public class TaskListServiceImpl implements TaskListService {
         return taskListRepository.findById(id);
     }
 
+    @Transactional
     @Override
     public TaskList updateTaskList(UUID id, TaskList taskList) {
         if(null == taskList.getId()) {
